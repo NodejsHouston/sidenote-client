@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Profileblurb from './Profileblurb';
 
 
 export default class Message extends Component {

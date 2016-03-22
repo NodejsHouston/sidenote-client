@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
 
-import Message from './Message';
-import Profileblurb from './Profileblurb';
+import UtilMessageListWrapper from './UtilMessageListWrapper';
 
 export default class Messagelist extends Component {
   	render() {
-  		let {messages} = this.props;
-        return  <div>
-                    <button className="list-group-item list-group-item-success">
-                        Messages
-                    </button>
+        var {old , _new} = this.props.messages;
+
+        return  <div className="list-group" style={{margin:'25px'}}>
+                    <UtilMessageListWrapper {...{messages:old}}/>
                     
-                    {messages.map((message , i)=>{ // react hates lists without a "key" prop
-                        return <Message {...{message:message , key:`message${i}`}} />
-                    })}
+                    {/*only render if we have _new messages*/}
+                    {_new.length? 
+                        <UtilMessageListWrapper {...{messages:_new , isNew:true}}/>
+                    :''}
                 </div>
   	}
 }
