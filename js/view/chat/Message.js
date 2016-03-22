@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 
 
 export default class Message extends Component {
-  render() {
-    return (
-      <div id='Message'>
-        Message
-      </div>
-    )
-  }
+  	render() {
+        var {profile , content} = this.props.message;
+
+        return  <button className="list-group-item">
+                    <ProfileBlurb {...profile}/>
+                    <div>{content}</div>
+                </button> 
+  	}
 }
 
 
