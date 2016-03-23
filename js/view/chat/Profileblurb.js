@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 
-export default class Profileblurb extends Component {
+export default class ProfileBlurb extends Component {
     render(){
         var {username , img} = this.props ,
             imgStyle = {margin:'5px' , width:'50px' , height:'50px'};

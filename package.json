@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-js": "browserify ./js/index.js -o ./js/bundle.js -t [ babelify --presets [ es2015 react ] ]",
+    "watch-js": "watchify   ./js/index.js -o ./js/bundle.js -t [ babelify --presets [ es2015 react ] ]",
+    "build-min":"browserify ./js/index.js  -t [ babelify --presets [ es2015 react ] ] | uglifyjs -mc > ./js/bundle.min.js",
+    "start": "npm run build-js & npm run watch-js"
+  },
   "browserify": {
     "transform": [
       "babelify"

@@ -15,19 +15,17 @@ _test.messages = {
         {profile:_test.profiles[0],content:'tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam'} ,
     ] ,
     _new :[
-        {profile:_test.profiles[Math.floor(Math.random() * 5) + 2],content:'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo'} ,
-        {profile:_test.profiles[Math.floor(Math.random() * 5) + 2],content:'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse'} ,
-        {profile:_test.profiles[Math.floor(Math.random() * 5) + 2],content:'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'} ,
-        {profile:_test.profiles[Math.floor(Math.random() * 5) + 2],content:'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} ,
+        {profile:_test.profiles[Math.floor(Math.random() * 2)],content:'quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo'} ,
+        {profile:_test.profiles[Math.floor(Math.random() * 2)],content:'consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse'} ,
+        {profile:_test.profiles[Math.floor(Math.random() * 2)],content:'cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non'} ,
+        {profile:_test.profiles[Math.floor(Math.random() * 2)],content:'proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} ,
     ]
 };
 export default class App extends Component {
   render() {
-    return (
-      <div id='App'>
-        <Messagelist messages={..._test}/>
-      </div>
-    )
+    return  <div id='App'>
+                <Messagelist {..._test}/>
+            </div>
   }
 }
 
