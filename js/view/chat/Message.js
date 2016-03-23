@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ProfileBlurb from './Profileblurb';
+import ProfileBlurb from './ProfileBlurb';
 
 
 export default class Message extends Component {
