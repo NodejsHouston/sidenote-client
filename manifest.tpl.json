@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "SideChat",
+  "description": "Have a SideChat anywhere on the web",
+  "version": "1.0",
+  "icons": {
+    "16": "%IMAGE_DIR%/icon-16.png",
+    "128": "%IMAGE_DIR%/icon-128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "%IMAGE_DIR%/icon-19.png",
+      "38": "%IMAGE_DIR%/icon-38.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "SideChat Here"
+  },
+  "permissions": [
+  ],
+  "content_security_policy": "script-src 'self' https://maxcdn.bootstrapcdn.com https://ajax.googleapis.com; object-src 'self'"
+}
