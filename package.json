@@ -8,7 +8,13 @@
     "build-js": "browserify ./js/index.js -o ./js/bundle.js -t [ babelify --presets [ es2015 react ] ]",
     "watch-js": "watchify   ./js/index.js -o ./js/bundle.js -t [ babelify --presets [ es2015 react ] ]",
     "build-min": "browserify ./js/index.js  -t [ babelify --presets [ es2015 react ] ] | uglifyjs -mc > ./js/bundle.min.js",
-    "start": "npm run build-js & npm run watch-js"
+    "start": "npm run build-js & npm run watch-js",
+    "dist-clean": "node -e \"require('shelljs/global'); rm('-rf','dist/'); mkdir('dist')\"",
+    "predist-build": "npm run build-min",
+    "dist-build": "node ./tools/distCopy.js && node ./tools/distRename.js",
+    "dist": "npm run dist-clean && npm run dist-build",
+    "preopen-dist": "npm run dist",
+    "open-dist": "node -e \"require('shelljs/global'); exec('node ./tools/launchChromeExtension.js', {async:true}); exit(0)\""
   },
   "browserify": {
     "transform": [
@@ -30,6 +36,9 @@
     "babel-preset-react": "6.5.0",
     "babelify": "7.2.0",
     "browserify": "13.0.0",
+    "chalk": "1.1.3",
+    "chrome-launch": "1.1.4",
+    "shelljs": "0.6.0",
     "uglifyjs": "2.4.10",
     "watchify": "3.7.0"
   },
