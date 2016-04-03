@@ -1,5 +1,13 @@
 node_modules
 .DS_Store
 
-# build js file - Daniel Buentello
+# build js files - Daniel Buentello
 /js/bundle.js
+/js/bundle.min.js
+
+# extension distribution - Daniel Buentello
+/dist
+
+# chrome temp user dir - Daniel Buentello
+/.chromeTmp
+
