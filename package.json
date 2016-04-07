@@ -14,7 +14,7 @@
     "dist-build": "node ./tools/distCopy.js && node ./tools/distRename.js",
     "dist": "npm run dist-clean && npm run dist-build",
     "preopen-dist": "npm run dist",
-    "open-dist": "node -e \"require('shelljs/global'); exec('node ./tools/launchChromeExtension.js', {async:true}); exit(0)\""
+    "open-dist": "node -e \"const spawn=require('child_process').spawn; spawn('node',['./tools/launchChromeExtension.js'],{detached: true, stdio: 'ignore'}).unref();\""
   },
   "browserify": {
     "transform": [
