@@ -8,8 +8,16 @@
 */
 
 const chrome = require('chrome-launch')
+const path = require('path');
+
+// Project Root
+const projDir = path.resolve()
+
+const tmpDir = path.join(projDir, '.chromeTmp');
+const extensionDir = path.join(projDir, 'dist');
+
 chrome('www.google.com', {
-  args: '--load-extension=dist',
-  dir: './.chromeTmp',
+  args: '--load-extension=' + extensionDir,
+  dir: tmpDir,
   nuke: true
 })
